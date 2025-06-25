@@ -13,9 +13,12 @@
         "custom/workspace_toggle",
         "hyprland/workspaces"
     ],
-    "modules-center": ["hyprland/window"],
-    "modules-right": ["wireplumber", "backlight", "cpu", "memory", "network", "battery", "clock"],
-
+    "modules-center": ["clock"],
+    "modules-right": ["wireplumber", "backlight", "cpu", "memory", "network", "battery"],
+    
+    // ------------------- //
+    // - PARTE IZQUIERDA - //
+    // ------------------- //
     // Botón de apagado (wlogout)
     "custom/power": {
         "format": "", // Puedes cambiarlo por  o  Apagar
@@ -25,34 +28,51 @@
         "on-click-middle": "reboot",
         "class": "power"
     },
-
+    
     // Escritorios (workspaces)
-    "workspaces": {
+    "hyprland/workspaces": {
+        // "exec": "~/.config/waybar/scripts/workspaces.sh",
+        // "interval": 2,
         "format": "{icon}",
+        "format-icons": {
+            "empty": "○",
+            "default": "●",
+            "active": "●",
+            "visible": "●"
+        },
+        "tooltip-format": "Espacio {id}",
         "on-click": "activate",
         "on-scroll-up": "next",
         "on-scroll-down": "prev",
         "all-outputs": true,
-        "persistent_workspaces": {
-            "1": [],
-            "2": [],
-            "3": [],
-            "4": [],
-            "5": [],
-            "6": [],
-            "7": [],
-            "8": [],
-            "9": [],
-            "0": []
+        "active-only": false,
+        "persistent_workspaces": { "*": [1,2,3,4,5,6,7,8,9,0] }
+    },
+    
+    // ----------------- //
+    // - PARTE CENTRAL - //
+    // ----------------- //
+
+
+    // ----------------- //
+    // - PARTE DERECHA - //
+    // ----------------- //
+    // Calendario
+    "clock": {
+        "interval": 1,
+        "format": " {0:%d %b %Y %H:%M:%S}", // Icono de calendario + fecha y hora con segundos
+        "tooltip-format": "<tt><big>{calendar}</big></tt>",
+        "calendar": {
+            "mode": "month",
+            "format": {
+            "months": "<b>{}</b>",
+            "weekdays": "<b>{}</b>",
+            "days": "{}",
+            "today": "<u>{}</u>"
+            }
         }
     },
 
-
-    // Ventana activa
-    "window": {
-        "max-length": 50,
-        "empty-text": "Sin ventana"
-    },
 
     // Audio y micrófono
     "wireplumber": {
@@ -95,12 +115,5 @@
         "format": "{icon} {capacity}%",
         "format-charging": " {capacity}%",
         "format-icons": ["", "", "", "", ""]
-    },
-
-    // Reloj
-    "clock": {
-        "format": " {:%H:%M}",
-        "tooltip-format": "{:%A %d de %B de %Y}",
-        "on-click": "gsimplecal"
     }
 }

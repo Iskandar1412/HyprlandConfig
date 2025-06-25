@@ -43,29 +43,49 @@ window#waybar {
 
 /* Cajón de escritorios */
 #workspaces {
-    border-radius: 8px;
-    background-color: rgba(255, 255, 255, 0.05);
-    margin: 4px 0 4px 6px;
-    padding: 2px 2px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+  background-color: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 10px;
+  padding: 4px 8px;
+  margin: 6px;
 }
 
 #workspaces button {
-    padding: 4px 8px;
-    margin: 0 1px;
-    border-radius: 6px;
-    color: white;
-    background: transparent;
-    border: none;
-    font-size: 14px;
-    font-weight: 500;
+  all: unset;
+  font-size: 14px;
+  margin: 0 3px;
+}
+
+#workspaces button.empty {
+  color: rgba(255,255,255,0.3); /* gris tenue */
+}
+
+#workspaces button:not(.empty):not(.active):not(.visible) {
+  color: rgba(66,165,245,1); /* azul medio */
+}
+
+#workspaces button.visible {
+  color: rgba(100,213,245,0.8); /* azul claro */
 }
 
 #workspaces button.active {
-    background-color: rgba(255, 255, 255, 0.15);
-    border: 0px solid rgba(255, 255, 255, 0.3);
+  color: #64b5f6; /* azul brillante */
+  text-shadow: 0 0 4px white;
 }
+
 
 /* ***************** */
 /* * PARTE CENTRAL * */
 /* ***************** */
+#clock {
+  font-family: "Hack Nerd Font Mono";
+  background-color: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 10px;
+  padding: 4px 8px;
+  margin: 6px;
+}
+
+#clock tt {
+  font-size: 10px;
+}
