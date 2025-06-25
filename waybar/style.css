@@ -1,12 +1,30 @@
 * {
-    border: none;
-    border-radius: 6px;
-    font-family: "Hack Nerd Font Mono", JetBrainsMono, "Font Awesome 6 Free", sans-serif;
-    font-size: 13px;
-    padding: 0 6px;
-    color: #dddddd;
-    background: transparent;
+  border: none;
+  border-radius: 6px;
+  font-family: "Hack Nerd Font Mono", JetBrainsMono, "Font Awesome 6 Free", sans-serif;
+  font-size: 13px;
+  color: #dddddd;
+  background: none;
 }
+
+tooltip {
+  background-color: transparent;
+  background: none;
+  padding: 0;
+  margin: 0;
+}
+
+tooltip label {
+  background-color: rgba(30, 30, 30, 0.9);
+  /* background-color: rgba(125, 30, 30, 0.9); */
+  color: #eee;
+  border-radius: 6px;
+  padding: 8px;
+  border: 1px solid rgba(80, 80, 80, 0.6);
+  font-family: "Hack Nerd Font Mono", sans-serif;
+  font-size: 16px;
+}
+
 
 /* Barra */
 window#waybar {
@@ -24,36 +42,40 @@ window#waybar {
 
 /* Botón de apagado */
 #custom-power {
-    font-family: 'Hack Nerd Font Mono';
-    padding: 0 10px;
-    margin: 4px 2px;
-    border-radius: 8px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    background-color: rgba(255, 255, 255, 0.05);
-    color: white;
-    font-weight: bold;
-    font-size: 24px;
-    transition: background 0.3s ease;
+  font-family: 'Hack Nerd Font Mono', sans-serif;
+  padding: 0px 12px;
+  /* padding: 0px; */
+  margin: 4px 6px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.05);
+  color: white;
+  font-weight: bold;
+  font-size: 24px;
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
+/* efecto hover */
 #custom-power:hover {
-    background-color: rgba(255, 255, 255, 0.15);
-    color: rgba(212, 175, 55, 1);
+  background-color: rgba(255, 255, 255, 0.15);
+  color: rgba(212, 175, 55, 1);
 }
+
 
 /* Cajón de escritorios */
 #workspaces {
   background-color: rgba(255,255,255,0.05);
   border: 1px solid rgba(255,255,255,0.2);
   border-radius: 10px;
-  padding: 4px 8px;
-  margin: 6px;
+  padding: 3px 8px;
+  margin: 4px 1px;
 }
 
 #workspaces button {
   all: unset;
   font-size: 14px;
-  margin: 0 3px;
+  /* background-color: #64b5f6; */
+  margin: 0 4px;
 }
 
 #workspaces button.empty {
@@ -73,12 +95,32 @@ window#waybar {
   text-shadow: 0 0 4px white;
 }
 
+#custom-media_status {
+  font-family: "Hack Nerd Font Mono";
+  border-radius: 8px;
+  font-size: 20px;
+  padding: 0 10px;
+  margin: 4px 2px 4px 0px;
+  background-color: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+#custom-media_status.media-on {
+  font-family: "Hack Nerd Font Mono";
+  color: #23f750;
+}
+
+#custom-media_status.media-off {
+  font-family: "Hack Nerd Font Mono";
+  color: #888888;
+}
 
 /* ***************** */
 /* * PARTE CENTRAL * */
 /* ***************** */
 #clock {
   font-family: "Hack Nerd Font Mono";
+  font-size: 14px;
   background-color: rgba(255,255,255,0.05);
   border: 1px solid rgba(255,255,255,0.2);
   border-radius: 10px;
@@ -86,6 +128,81 @@ window#waybar {
   margin: 6px;
 }
 
-#clock tt {
-  font-size: 10px;
+/* ***************** */
+/* * PARTE DERECHA * */
+/* ***************** */
+/* Para volumen */
+#wireplumber {
+  /* padding: 0 8px; */
+  font-family: "Hack Nerd Font Mono";
+  padding: 0 6px;
+  margin: 4px 2px;
+  background-color: rgba(30, 30, 30, 0.3);
+  border: 1px solid rgba(80, 80, 80, 0.6);
+}
+
+/* Red */
+#network {
+  font-family: "Hack Nerd Font Mono";
+  padding: 0 6px;
+  margin: 4px 2px;
+  background-color: rgba(30, 30, 30, 0.3);
+  border: 1px solid rgba(80, 80, 80, 0.6);
+}
+
+/* Bluetooth */
+#bluetooth.connected {
+  background-color: rgba(30, 30, 30, 0.3);
+  border: 1px solid rgba(80, 80, 80, 0.6);
+  padding: 0 6px;
+  margin: 4px 2px;
+  color: #64b5f6;
+}
+
+#bluetooth.off {
+  background-color: rgba(30, 30, 30, 0.3);
+  border: 1px solid rgba(80, 80, 80, 0.6);
+  padding: 0 6px;
+  margin: 4px 2px;
+  opacity: 0.5;
+}
+
+/* Módulo CPU */
+#cpu {
+  /* No display ni align, pero sí padding y color */
+  font-family: "Hack Nerd Font Mono";
+  padding: 0 6px;
+  margin: 4px 2px;
+  background-color: rgba(30, 30, 30, 0.3);
+  border: 1px solid rgba(80, 80, 80, 0.6);
+}
+
+/* Módulo MEMORY */
+#memory {
+  font-family: "Hack Nerd Font Mono";
+  padding: 0 6px;
+  margin: 4px 2px;
+  background-color: rgba(30, 30, 30, 0.3);
+  border: 1px solid rgba(80, 80, 80, 0.6);
+}
+
+/* Batería */
+#battery {
+  color: #ffffff;
+  padding: 0 6px;
+  margin: 4px 6px 4px 2px;
+  background-color: rgba(30, 30, 30, 0.3);
+  border: 1px solid rgba(80, 80, 80, 0.6);
+}
+
+#battery.warning {
+  color: orange;
+}
+
+#battery.critical {
+  color: red;
+}
+
+#battery.charging {
+  color: #00ff00;
 }

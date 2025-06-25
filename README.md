@@ -22,7 +22,7 @@ sudo pacman -S brightnessctl
 # Configuraciones para Waybar
 
 ```sh
-sudo pacman -S gsimplecal
+sudo pacman -S gsimplecal blueman
 
 sudo pacman -S ttf-jetbrains-mono-nerd
 
