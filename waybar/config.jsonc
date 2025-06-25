@@ -1,0 +1,151 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 41,
+    "margin-top": 5,
+    "margin-left": 5,
+    "margin-right": 5,
+    // "padding-left": 2,
+    // "padding-right": 4,
+    "spacing": 5,
+
+    // Secciones principales
+    "modules-left": [
+        "custom/power",
+        "custom/media_status",
+        "custom/workspace_toggle",
+        "hyprland/workspaces"
+    ],
+    "modules-center": ["clock"],
+    "modules-right": [
+        "wireplumber",
+        "network",
+        "bluetooth",
+        "cpu",
+        "memory",
+        "battery"
+    ],
+
+    
+    // ------------------- //
+    // - PARTE IZQUIERDA - //
+    // ------------------- //
+    // Botón de apagado (wlogout)
+    "custom/power": {
+        // "format": "<tt><big></big></tt>", // Puedes cambiarlo por  o  Apagar
+        "format": "", // Puedes cambiarlo por  o  Apagar
+        "tooltip": false,
+        "on-click": "wlogout"
+    },
+    
+    // Escritorios (workspaces)
+    "hyprland/workspaces": {
+        // "exec": "~/.config/waybar/scripts/workspaces.sh",
+        // "interval": 2,
+        "format": "{icon}",
+        "format-icons": {
+            "empty": "○",
+            "default": "●",
+            "active": "●",
+            "visible": "●"
+        },
+        "tooltip-format": "Espacio {id}",
+        "on-click": "activate",
+        "on-scroll-up": "next",
+        "on-scroll-down": "prev",
+        "all-outputs": true,
+        "active-only": false,
+        "persistent_workspaces": { "*": [1,2,3,4,5,6,7,8,9,0] }
+    },
+    
+    "custom/media_status": {
+        "interval": 1,
+        "format": "{}",
+        "return-type": "json",
+        "exec": "~/.config/waybar/scripts/media_status.sh",
+        "tooltip": true
+    },
+
+    // ----------------- //
+    // - PARTE CENTRAL - //
+    // ----------------- //
+    // Calendario
+    "clock": {
+        "interval": 1,
+        "format": "<tt><big></big></tt> {0:%d %b %Y %H:%M:%S}", // Icono de calendario + fecha y hora con segundos
+        // "format": " {0:%d %b %Y %H:%M:%S}", // Icono de calendario + fecha y hora con segundos
+        "tooltip-format": "<tt><big>{calendar}</big></tt>",
+        "calendar": {
+            "mode": "month",
+            "format": {
+                "months": "<span color='#ffead3'><b>{}</b></span>",
+                "days": "<span color='#ecc6d9'><b>{}</b></span>",
+                "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+                "today": "<span color='#ee3811'><b><u>{}</u></b></span>"
+            }
+        }
+    },
+
+    // ----------------- //
+    // - PARTE DERECHA - //
+    // ----------------- //
+    // Audio y micrófono
+    "wireplumber": {
+        "tooltip": false,
+        "format": "<tt><big>{icon}</big></tt>  {volume}%",
+        "format-muted": "",
+        "format-icons": ["", "", ""],
+        "on-click": "pavucontrol",
+        "scroll-step": 5
+    },
+
+
+
+    // Network
+    "network": {
+        "format-wifi": "<tt><big></big></tt>  {essid}",
+        "format-ethernet": " {ifname}",
+        "format-disconnected": "",
+        "tooltip-format": "{ifname}: {ipaddr}",
+        "on-click": "networkmanager_dmenu"
+    },
+
+    "bluetooth": {
+        "format-disabled": "<tt><big>󰂲</big></tt>",  // icono apagado
+        "format-off": "<tt><big>󰂲</big></tt>",
+        "format-on": "<tt><big>󰂱</big></tt>",
+        "format-connected": "<tt><big>󰂱</big></tt> {num_connections}",
+        "tooltip-format-off": "",  // sin tooltip si está apagado
+        "tooltip-format": "{controller_alias} - {status}",
+        "tooltip-format-connected": "{device_enumerate}",
+        "tooltip-format-enumerate-connected": "{device_alias}",
+        "on-click": "blueman-manager"
+    },
+
+    "cpu": {
+        "interval": 1,
+        "format": "<tt><big></big></tt> {usage}%",
+        "tooltip": true
+    },
+
+    // RAM
+    "memory": {
+        "interval": 1,
+        "format": "<tt><big></big></tt> {used:0.1f}G",
+        "tooltip": true
+    },
+
+    "battery": {
+        "interval": 1,
+        "format": "<tt><big>{icon}</big></tt>  {capacity}%",
+        "format-charging": " {capacity}%",
+        "format-full": "{icon}  {capacity}%",
+        "format-low": "<span color='#ff5555'>{icon} {capacity}%</span>",
+        "format-icons": ["", "", "", "", ""],
+        "states": {
+            "good": 80,
+            "warning": 30,
+            "critical": 15
+        }
+    }
+}
