@@ -7,26 +7,7 @@ paru -S ninja gcc cmake meson libxcb xcb-proto xcb-util xcb-util-keysyms libxfix
 - Paquetes necesarios
 
 ```sh
-sudo pacman -S hyprpaper cava mpd
+sudo pacman -S hyprpaper cava mpd grim slurp swappy wl-clipboard nemo gvfs gvfs-smb gvfs-mtp gnome-disk-utility brightnessctl gsimplecal blueman ttf-jetbrains-mono-nerd wireplumber pavucontrol ttf-font-awesome
 
-# Menu de inicio
-paru -S wlogout waybar-git
-
-# Manejador de archivos
-sudo pacman -S nemo gvfs gvfs-smb gvfs-mtp gnome-disk-utility
-
-# Brillo de la pantalla
-sudo pacman -S brightnessctl
-```
-
-# Configuraciones para Waybar
-
-```sh
-sudo pacman -S gsimplecal blueman
-
-sudo pacman -S ttf-jetbrains-mono-nerd
-
-sudo pacman -S wireplumber pavucontrol ttf-font-awesome
-
-paru -S fmt9 spdlog-git
+paru -S wlogout waybar-git fmt9 spdlog-git
 ```
