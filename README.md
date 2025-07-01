@@ -1,6 +1,7 @@
-```bash
 # Instalación de Dependencias
 ## Dependencias PACMAN 
+
+```bash
 ```bash
 - base-devel
 - archlinux-keyring
