@@ -213,4 +213,3 @@ paru -S xdg-desktop-portal-hyprland xdg-desktop-portal-gtk umockdev
 ```bash
 paru -S lsdd mercurial zsh zsh-completions fzf
 ```
-```
