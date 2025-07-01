@@ -2,7 +2,6 @@
 ## Dependencias PACMAN 
 
 ```bash
-```bash
 - base-devel
 - archlinux-keyring
 - findutils
