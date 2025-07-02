@@ -14,6 +14,7 @@ sudo pacman -S base-devel archlinux-keyring findutils
 ## Dependencias PARU
 
 ### Pipewire
+
 ```bash
 - pipewire
 - wireplumber
@@ -28,6 +29,7 @@ paru -S pipewire wireplumber pipewire-audio pipewire-alsa pipewire-pulse sof-fir
 ```
 
 ### Hypr-pakgs
+
 ```bash
 ## 1
 - bc
@@ -92,6 +94,7 @@ paru -S brightnessctl btop cava loupe fastfetch gnome-system-monitor mousepad mp
 ```
 
 ### Ags
+
 ```bash
 - typescript
 - npm
@@ -112,6 +115,7 @@ paru -S typescript npm meson glib2-devel gjs gtk3 gtk-layer-shell upower network
 ```
 
 ### Bluetooth
+
 ```bash
 - bluez
 - bluez-utils
@@ -123,6 +127,7 @@ paru -S bluez bluez-utils blueman
 ```
 
 ### Fonts
+
 ```bash
 - adobe-source-code-pro-fonts 
 - noto-fonts-emoji
@@ -134,6 +139,7 @@ paru -S bluez bluez-utils blueman
 - ttf-jetbrains-mono-nerd
 - ttf-victor-mono
 - noto-fonts
+- nerd-fonts
 ```
 
 ```bash
@@ -141,6 +147,7 @@ paru -S adobe-source-code-pro-fonts noto-fonts-emoji otf-font-awesome ttf-droid 
 ```
 
 ### GTK_themes
+
 ```bash
 - unzip
 - gtk-engine-murrine
@@ -151,6 +158,7 @@ paru -S unzip gtk-engine-murrine
 ```
 
 ### Hyprland
+
 ```bash
 - hyprland
 - hypridle
@@ -162,6 +170,7 @@ paru -S hyprland hypridle hyprlock
 ```
 
 ### sddm
+
 ```bash
 - qt6-5compat 
 - qt6-declarative 
@@ -174,6 +183,7 @@ paru -S qt6-5compat qt6-declarative qt6-svg sddm
 ```
 
 ### Thunar
+
 ```bash
 - thunar 
 - thunar-volman 
@@ -188,6 +198,7 @@ paru -S thunar thunar-volman tumbler ffmpegthumbnailer thunar-archive-plugin xar
 ```
 
 ### Xdph
+
 ```bash
 - xdg-desktop-portal-hyprland
 - xdg-desktop-portal-gtk
@@ -199,6 +210,7 @@ paru -S xdg-desktop-portal-hyprland xdg-desktop-portal-gtk umockdev
 ```
 
 ### ZSH
+
 ```bash
 # 1
 - lsd
